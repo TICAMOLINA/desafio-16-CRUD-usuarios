@@ -1,7 +1,14 @@
+import Formulario from "./components/Formulario"
+import UserList from "./components/UserList"
 
 const App = () => {
   return (
-    <div>App</div>
+    <>
+
+    <Formulario />
+    <UserList />
+    
+    </>
   )
 }
 

@@ -1,7 +1,10 @@
+import Fila from "./Fila"
 
 const UserList = () => {
   return (
-    <div>UserList</div>
+    <>
+    <Fila />
+    </>
   )
 }
 
