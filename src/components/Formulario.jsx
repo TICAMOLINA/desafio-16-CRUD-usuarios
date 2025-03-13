@@ -1,7 +1,69 @@
 
 const Formulario = () => {
   return (
-    <div>Formulario</div>
+    <>
+    <h2 className="text-2xl font-semibold my-4">
+        Formulario de carga/edición de usuarios
+    </h2>
+
+    <div className="max-w-lg mb-4">
+        <form className="bg-white border rounded-lg p-6">
+
+            {/* NOMBRE */}
+            <label htmlFor="lbl-nombre" className="block mb-2 text-sm font-medium text-gray-700">
+                Nombre
+            </label>
+            <input 
+            type="text"
+            id="lbl-nombre"
+            placeholder="Ingresa el nombre del usuario"
+            className="w-full p-2 mb-4 border rounded-lg foucs:outline-none focus:ring-2 focus:ring-blue-500"/>
+
+            {/* APELLIDO */}
+            <label htmlFor="lbl-apellido" className="block mb-2 text-sm font-medium text-gray-700">
+                Apellido
+            </label>
+            <input 
+            type="text"
+            id="lbl-apellido"
+            placeholder="Ingresa el apellido del usuario"
+            className="w-full p-2 mb-4 border rounded-lg foucs:outline-none focus:ring-2 focus:ring-blue-500"/>
+
+            {/* EDAD */}
+            <label htmlFor="lbl-edad" className="block mb-2 text-sm font-medium text-gray-700">
+                Edad
+            </label>
+            <input 
+            type="text"
+            id="lbl-edad"
+            placeholder="Ingresa el edad del usuario"
+            className="w-full p-2 mb-4 border rounded-lg foucs:outline-none focus:ring-2 focus:ring-blue-500"/>
+
+            {/* PUESTO */}
+            <label htmlFor="lbl-puesto" className="block mb-2 text-sm font-medium text-gray-700">
+                Puesto
+            </label>
+            <input 
+            type="text"
+            id="lbl-puesto"
+            placeholder="Ingresa el puesto del usuario"
+            className="w-full p-2 mb-4 border rounded-lg foucs:outline-none focus:ring-2 focus:ring-blue-500"/>
+
+            <div className="flex justify-between">
+                <button
+                type="submit"
+                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 cursor-pointer">
+                    Crear/Editar
+                </button>
+                <button
+                type="reset"
+                className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 cursor-pointer">
+                    Resetear
+                </button>
+            </div>
+        </form>
+    </div>
+    </>
   )
 }
 
