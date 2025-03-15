@@ -18,7 +18,7 @@ const UserList = () => {
 
         {
           USUARIOS.map((usuario) => (
-            <Fila usuario={usuario} />
+            <Fila usuario={usuario} key={usuario.id} />
 
           ))
         }
