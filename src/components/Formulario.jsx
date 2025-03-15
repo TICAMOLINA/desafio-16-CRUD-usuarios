@@ -20,6 +20,10 @@ const Formulario = () => {
         setDataFormulario(dataActualizada)
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+    }
+
   return (
     <>
     <h2 className="text-2xl font-semibold my-4">
@@ -27,7 +31,9 @@ const Formulario = () => {
     </h2>
 
     <div className="max-w-lg mb-4">
-        <form className="bg-white border rounded-lg p-6">
+        <form
+        onSubmit={handleSubmit} 
+        className="bg-white border rounded-lg p-6">
 
             {/* NOMBRE */}
             <label htmlFor="lbl-nombre" className="block mb-2 text-sm font-medium text-gray-700">
