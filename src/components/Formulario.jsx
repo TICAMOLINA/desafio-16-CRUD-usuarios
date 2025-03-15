@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const Formulario = () => {
+const Formulario = ({agregarUsuario}) => {
 
     const [dataFormulario, setDataFormulario] = useState({
         id: null,
@@ -22,6 +22,8 @@ const Formulario = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        agregarUsuario(dataFormulario)
     }
 
   return (
