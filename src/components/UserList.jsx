@@ -1,7 +1,9 @@
-import USUARIOS from "../constants/USUARIOS"
 import Fila from "./Fila"
 
-const UserList = () => {
+const UserList = ({ usuarios }) => {
+
+
+
   return (
     <table className="w-full text-sm text-left text-gray-500">
       <thead className="text-xs text-gray-700 uppercase bg-gray-200">
@@ -17,7 +19,7 @@ const UserList = () => {
       <tbody>
 
         {
-          USUARIOS.map((usuario) => (
+          usuarios.map((usuario) => (
             <Fila usuario={usuario} key={usuario.id} />
 
           ))
