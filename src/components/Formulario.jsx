@@ -36,7 +36,7 @@ const Formulario = () => {
             <input 
             type="text"
             id="lbl-edad"
-            placeholder="Ingresa el edad del usuario"
+            placeholder="Ingresa la edad del usuario"
             className="w-full p-2 mb-4 border rounded-lg foucs:outline-none focus:ring-2 focus:ring-blue-500"/>
 
             {/* PUESTO */}
@@ -47,6 +47,16 @@ const Formulario = () => {
             type="text"
             id="lbl-puesto"
             placeholder="Ingresa el puesto del usuario"
+            className="w-full p-2 mb-4 border rounded-lg foucs:outline-none focus:ring-2 focus:ring-blue-500"/>
+
+            {/* FOTO */}
+            <label htmlFor="lbl-foto" className="block mb-2 text-sm font-medium text-gray-700">
+                Foto
+            </label>
+            <input 
+            type="text"
+            id="lbl-foto"
+            placeholder="Ingresa la foto del usuario"
             className="w-full p-2 mb-4 border rounded-lg foucs:outline-none focus:ring-2 focus:ring-blue-500"/>
 
             <div className="flex justify-between">
