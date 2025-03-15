@@ -1,7 +1,7 @@
 import Formulario from "./components/Formulario"
 import UserList from "./components/UserList"
 import { useState } from "react"
-import USUARIOS from "../constants/USUARIOS"
+import USUARIOS from "./constants/USUARIOS"
 
 const App = () => {
 

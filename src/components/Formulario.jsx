@@ -1,5 +1,25 @@
+import { useState } from "react"
 
 const Formulario = () => {
+
+    const [dataFormulario, setDataFormulario] = useState({
+        id: null,
+        nombre: '',
+        apellido: '',
+        edad: '',
+        puesto: '',
+        foto: '',
+    })
+
+    const handleChange = (e) => {
+        const dataActualizada = {
+            ...dataFormulario,
+            [e.target.name]: e.target.value
+        }
+
+        setDataFormulario(dataActualizada)
+    }
+
   return (
     <>
     <h2 className="text-2xl font-semibold my-4">
@@ -17,7 +37,10 @@ const Formulario = () => {
             type="text"
             id="lbl-nombre"
             placeholder="Ingresa el nombre del usuario"
-            className="w-full p-2 mb-4 border rounded-lg foucs:outline-none focus:ring-2 focus:ring-blue-500"/>
+            className="w-full p-2 mb-4 border rounded-lg foucs:outline-none focus:ring-2 focus:ring-blue-500"
+            name="nombre"
+            onChange={handleChange}
+            value={dataFormulario.nombre}/>
 
             {/* APELLIDO */}
             <label htmlFor="lbl-apellido" className="block mb-2 text-sm font-medium text-gray-700">
@@ -27,7 +50,10 @@ const Formulario = () => {
             type="text"
             id="lbl-apellido"
             placeholder="Ingresa el apellido del usuario"
-            className="w-full p-2 mb-4 border rounded-lg foucs:outline-none focus:ring-2 focus:ring-blue-500"/>
+            className="w-full p-2 mb-4 border rounded-lg foucs:outline-none focus:ring-2 focus:ring-blue-500"
+            name="apellido"
+            onChange={handleChange}
+            value={dataFormulario.apellido}/>
 
             {/* EDAD */}
             <label htmlFor="lbl-edad" className="block mb-2 text-sm font-medium text-gray-700">
@@ -37,7 +63,10 @@ const Formulario = () => {
             type="text"
             id="lbl-edad"
             placeholder="Ingresa la edad del usuario"
-            className="w-full p-2 mb-4 border rounded-lg foucs:outline-none focus:ring-2 focus:ring-blue-500"/>
+            className="w-full p-2 mb-4 border rounded-lg foucs:outline-none focus:ring-2 focus:ring-blue-500"
+            name="edad"
+            onChange={handleChange}
+            value={dataFormulario.edad}/>
 
             {/* PUESTO */}
             <label htmlFor="lbl-puesto" className="block mb-2 text-sm font-medium text-gray-700">
@@ -47,7 +76,10 @@ const Formulario = () => {
             type="text"
             id="lbl-puesto"
             placeholder="Ingresa el puesto del usuario"
-            className="w-full p-2 mb-4 border rounded-lg foucs:outline-none focus:ring-2 focus:ring-blue-500"/>
+            className="w-full p-2 mb-4 border rounded-lg foucs:outline-none focus:ring-2 focus:ring-blue-500"
+            name="puesto"
+            onChange={handleChange}
+            value={dataFormulario.puesto}/>
 
             {/* FOTO */}
             <label htmlFor="lbl-foto" className="block mb-2 text-sm font-medium text-gray-700">
@@ -57,7 +89,10 @@ const Formulario = () => {
             type="text"
             id="lbl-foto"
             placeholder="Ingresa la foto del usuario"
-            className="w-full p-2 mb-4 border rounded-lg foucs:outline-none focus:ring-2 focus:ring-blue-500"/>
+            className="w-full p-2 mb-4 border rounded-lg foucs:outline-none focus:ring-2 focus:ring-blue-500"
+            name="foto"
+            onChange={handleChange}
+            value={dataFormulario.foto}/>
 
             <div className="flex justify-between">
                 <button
