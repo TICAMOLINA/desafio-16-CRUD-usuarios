@@ -13,13 +13,20 @@ const App = () => {
     setUsuarios(nuevoEstadoUsuarios)
   }
 
+  const borrarUsuario = (id) => {
+    const nuevoEstadoUsuarios = usuarios.filter ( user => user.id !== id)
+    setUsuarios(nuevoEstadoUsuarios)
+  }
+
   return (
     <>
       <div className="container mx-auto">
         <h1 className="text-4xl my-5">CRUD Usuarios</h1>
         <hr />
         <Formulario agregarUsuario={agregarUsuario}/>
-        <UserList usuarios={usuarios}/>
+        <UserList 
+        usuarios={usuarios}
+        borrarUsuario={borrarUsuario}/>
       </div>
     </>
   )

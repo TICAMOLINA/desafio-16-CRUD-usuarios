@@ -1,6 +1,6 @@
 import Fila from "./Fila"
 
-const UserList = ({ usuarios }) => {
+const UserList = ({ usuarios, borrarUsuario }) => {
 
 
 
@@ -20,7 +20,10 @@ const UserList = ({ usuarios }) => {
 
         {
           usuarios.map((usuario) => (
-            <Fila usuario={usuario} key={usuario.id} />
+            <Fila 
+            usuario={usuario} 
+            key={usuario.id} 
+            borrarUsuario= {borrarUsuario}/>
 
           ))
         }
