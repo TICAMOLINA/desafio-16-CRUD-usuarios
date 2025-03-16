@@ -1,12 +1,31 @@
 import Formulario from "./components/Formulario"
 import UserList from "./components/UserList"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import USUARIOS from "./constants/USUARIOS"
 
 const App = () => {
 
-  const [usuarios, setUsuarios] = useState(USUARIOS)
+  const [usuarios, setUsuarios] = useState(null)
   const [usuarioAEditar, setUsuarioAEditar] = useState(null)
+
+  useEffect(() => {
+    getAllUsuarios()
+  }, [])
+  
+  const getAllUsuarios = async () => {
+
+    try {
+      const res = await fetch(import.meta.env.VITE_BACKEND)
+
+      if (!res.ok) {
+        throw new Error ('No pudo hacerse la petición')
+      }
+      const data = await res.json()
+      setUsuarios(data);
+    } catch (error) {
+      console.error(error.message)
+    }
+  }
 
   const agregarUsuario = (nuevoUsuario) => {
     nuevoUsuario.id = Date.now()
