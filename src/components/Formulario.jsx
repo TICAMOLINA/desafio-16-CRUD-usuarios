@@ -1,15 +1,22 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-const Formulario = ({agregarUsuario}) => {
+const Formulario = ({agregarUsuario, usuarioAEditar, setUsuarioAEditar, editarUsuario}) => {
 
-    const [dataFormulario, setDataFormulario] = useState({
+    const dataFormularioInicial = {
         id: null,
         nombre: '',
         apellido: '',
         edad: '',
         puesto: '',
         foto: '',
-    })
+    }
+
+    const [dataFormulario, setDataFormulario] = useState(dataFormularioInicial)
+
+    useEffect(() => {
+      usuarioAEditar ? setDataFormulario(usuarioAEditar) : setDataFormulario(dataFormularioInicial)
+    }, [usuarioAEditar])
+    
 
     const handleChange = (e) => {
         const dataActualizada = {
@@ -23,13 +30,24 @@ const Formulario = ({agregarUsuario}) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        agregarUsuario(dataFormulario)
+        if (dataFormulario.id === null) {
+            agregarUsuario(dataFormulario)
+            
+        } else {
+            editarUsuario(dataFormulario)
+        }
+        handleReset()
+    }
+
+    const handleReset = () => {
+        setDataFormulario(dataFormularioInicial)
+        setUsuarioAEditar(null)
     }
 
   return (
     <>
     <h2 className="text-2xl font-semibold my-4">
-        Formulario de carga/edición de usuarios
+        Formulario de {usuarioAEditar ? 'edición' : 'carga'} de usuarios
     </h2>
 
     <div className="max-w-lg mb-4">
@@ -105,13 +123,14 @@ const Formulario = ({agregarUsuario}) => {
             <div className="flex justify-between">
                 <button
                 type="submit"
-                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 cursor-pointer">
-                    Crear/Editar
+                className={`px-4 py-2 ${usuarioAEditar ? 'bg-yellow-300' : 'bg-green-300'} bg-green-300 text-white rounded-lg ${usuarioAEditar ? 'hover:bg-yellow-700' : 'hover:bg-green-700'} cursor-pointer`}>
+                    { usuarioAEditar ? 'Editar' : 'Crear'}
                 </button>
                 <button
                 type="reset"
-                className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 cursor-pointer">
-                    Resetear
+                className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 cursor-pointer"
+                onClick={handleReset}
+                >Resetear
                 </button>
             </div>
         </form>

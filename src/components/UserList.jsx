@@ -1,6 +1,6 @@
 import Fila from "./Fila"
 
-const UserList = ({ usuarios, borrarUsuario }) => {
+const UserList = ({ usuarios, borrarUsuario, setUsuarioAEditar }) => {
 
 
 
@@ -23,7 +23,8 @@ const UserList = ({ usuarios, borrarUsuario }) => {
             <Fila 
             usuario={usuario} 
             key={usuario.id} 
-            borrarUsuario= {borrarUsuario}/>
+            borrarUsuario= {borrarUsuario}
+            setUsuarioAEditar={setUsuarioAEditar}/>
 
           ))
         }

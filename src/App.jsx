@@ -6,6 +6,7 @@ import USUARIOS from "./constants/USUARIOS"
 const App = () => {
 
   const [usuarios, setUsuarios] = useState(USUARIOS)
+  const [usuarioAEditar, setUsuarioAEditar] = useState(null)
 
   const agregarUsuario = (nuevoUsuario) => {
     nuevoUsuario.id = Date.now()
@@ -18,15 +19,26 @@ const App = () => {
     setUsuarios(nuevoEstadoUsuarios)
   }
 
+  const editarUsuario = (usuarioEditado) => {
+    usuarioEditado.edad = Number(usuarioEditado.edad)
+    const nuevoEstadoUsuarios = usuarios.map(user => user.id === usuarioEditado.id ? usuarioEditado : user)
+    setUsuarios(nuevoEstadoUsuarios)
+  }
+
   return (
     <>
       <div className="container mx-auto">
         <h1 className="text-4xl my-5">CRUD Usuarios</h1>
         <hr />
-        <Formulario agregarUsuario={agregarUsuario}/>
+        <Formulario 
+        agregarUsuario={agregarUsuario}
+        usuarioAEditar={usuarioAEditar}
+        setUsuarioAEditar= {setUsuarioAEditar}
+        editarUsuario={editarUsuario}/>
         <UserList 
         usuarios={usuarios}
-        borrarUsuario={borrarUsuario}/>
+        borrarUsuario={borrarUsuario}
+        setUsuarioAEditar={setUsuarioAEditar}/>
       </div>
     </>
   )
