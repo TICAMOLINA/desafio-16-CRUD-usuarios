@@ -1,8 +1,27 @@
+import Swal from "sweetalert2";
 
 const Fila = ({ usuario, borrarUsuario, setUsuarioAEditar }) => {
 
   const handleEliminar = (id) => {
-    borrarUsuario(id)
+
+    Swal.fire({
+      title: "¿Estás seguro que deseas borrar?",
+      text: "No podrás revertir este proceso",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, borralo!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        borrarUsuario(id)
+        Swal.fire({
+          title: "Borrado con éxito!",
+          text: "El usuario ha sido borrado de la lista.",
+          icon: "success"
+        });
+      } 
+    });
   }
 
   const handleEditar = (usuario) => {
@@ -16,7 +35,7 @@ const Fila = ({ usuario, borrarUsuario, setUsuarioAEditar }) => {
       <td className="px-6 py-4">{usuario.edad}</td>
       <td className="px-6 py-4">{usuario.puesto}</td>
       <td className="px-6 py-4">
-      <img src={usuario.foto} alt={usuario.nombre} style={{ width: '100px'}} />
+        <img src={usuario.foto} alt={usuario.nombre} style={{ width: '100px' }} />
       </td>
       <td className="px-6 py-4">
         <button

@@ -47,14 +47,6 @@
       "edad": 55,
       "puesto": "Desarrollador Full Stack",
       "foto": "imgs/virgo.webp"
-    },
-    {
-      "id": "571f",
-      "nombre": "Laura",
-      "apellido": "Carciochi",
-      "edad": "47",
-      "puesto": "Cocinera",
-      "foto": "/imgs/fenix.webp"
     }
   ]
 }

@@ -51,8 +51,26 @@ const App = () => {
 
   }
 
-  const borrarUsuario = (id) => {
-    const nuevoEstadoUsuarios = usuarios.filter(user => user.id !== id)
+  const borrarUsuario = async (id) => {
+
+    const urlBorrado = import.meta.env.VITE_BACKEND + id
+
+    try {
+      const res = await fetch(urlBorrado, {
+        method: 'DELETE'
+      })
+
+      if (!res.ok) {
+        throw new Error ('No se pudo hacer la petición')
+      }
+
+      const usuarioEliminadoDelBackend = await res.json()
+
+    } catch (error) {
+      console.error(error.message);
+    }
+
+    const nuevoEstadoUsuarios = usuarios.filter( user => user.id !== id)
     setUsuarios(nuevoEstadoUsuarios)
   }
 
