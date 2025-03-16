@@ -21,12 +21,12 @@ const UserList = ({ usuarios, borrarUsuario, setUsuarioAEditar }) => {
             </tr>
           </thead>
           <tbody>
-              {usuarios.map((usuario) => (
-            <Fila
-              usuario={usuario}
-              key={usuario.id}
-              borrarUsuario={borrarUsuario}
-              setUsuarioAEditar={setUsuarioAEditar} />
+            {usuarios.map((usuario) => (
+              <Fila
+                usuario={usuario}
+                key={usuario.id}
+                borrarUsuario={borrarUsuario}
+                setUsuarioAEditar={setUsuarioAEditar} />
             ))}
           </tbody>
         </table>

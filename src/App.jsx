@@ -27,10 +27,28 @@ const App = () => {
     }
   }
 
-  const agregarUsuario = (nuevoUsuario) => {
-    nuevoUsuario.id = Date.now()
-    const nuevoEstadoUsuarios = [...usuarios, nuevoUsuario]
-    setUsuarios(nuevoEstadoUsuarios)
+  const agregarUsuario = async (nuevoUsuario) => {
+    delete nuevoUsuario.id
+
+    try {
+      const res = await fetch(import.meta.env.VITE_BACKEND, {
+        method: 'POST',
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify(nuevoUsuario)
+      })
+
+      if (!res.ok) {
+        throw new Error ('No se pudo hacer la petición')
+      }
+
+      const usuarioAgregadoEnBackend = await res.json()
+      const nuevoEstadoUsuarios = [...usuarios, usuarioAgregadoEnBackend]
+      setUsuarios(nuevoEstadoUsuarios)
+    } catch (error) {
+      console.error(error.message)
+    }
+
+
   }
 
   const borrarUsuario = (id) => {
