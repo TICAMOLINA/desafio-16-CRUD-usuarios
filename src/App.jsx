@@ -15,7 +15,7 @@ const App = () => {
   }
 
   const borrarUsuario = (id) => {
-    const nuevoEstadoUsuarios = usuarios.filter ( user => user.id !== id)
+    const nuevoEstadoUsuarios = usuarios.filter(user => user.id !== id)
     setUsuarios(nuevoEstadoUsuarios)
   }
 
@@ -30,15 +30,15 @@ const App = () => {
       <div className="container mx-auto">
         <h1 className="text-4xl my-5">CRUD Usuarios</h1>
         <hr />
-        <Formulario 
-        agregarUsuario={agregarUsuario}
-        usuarioAEditar={usuarioAEditar}
-        setUsuarioAEditar= {setUsuarioAEditar}
-        editarUsuario={editarUsuario}/>
-        <UserList 
-        usuarios={usuarios}
-        borrarUsuario={borrarUsuario}
-        setUsuarioAEditar={setUsuarioAEditar}/>
+        <Formulario
+          agregarUsuario={agregarUsuario}
+          usuarioAEditar={usuarioAEditar}
+          setUsuarioAEditar={setUsuarioAEditar}
+          editarUsuario={editarUsuario} />
+        <UserList
+          usuarios={usuarios}
+          borrarUsuario={borrarUsuario}
+          setUsuarioAEditar={setUsuarioAEditar} />
       </div>
     </>
   )
