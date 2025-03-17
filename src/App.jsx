@@ -74,10 +74,29 @@ const App = () => {
     setUsuarios(nuevoEstadoUsuarios)
   }
 
-  const editarUsuario = (usuarioEditado) => {
-    usuarioEditado.edad = Number(usuarioEditado.edad)
-    const nuevoEstadoUsuarios = usuarios.map(user => user.id === usuarioEditado.id ? usuarioEditado : user)
-    setUsuarios(nuevoEstadoUsuarios)
+  const editarUsuario = async (usuarioEditado) => {
+
+    const urlEditar = import.meta.env.VITE_BACKEND + usuarioEditado.id
+
+    try {
+      usuarioEditado.edad = Number(usuarioEditado.edad)
+      const res = await fetch(urlEditar, {
+        method: 'PUT',
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify(usuarioEditado) 
+      })
+
+      if (!res.ok) {
+        throw new Error ('No se pudo hacer la petición')
+      }
+
+      const usuarioEditadoBackend = await res.json()
+      const nuevoEstadoUsuarios = usuarios.map(user => user.id === usuarioEditado.id ? usuarioEditado : user)
+      setUsuarios(nuevoEstadoUsuarios)
+
+    } catch (error) {
+      console.error(error.message)
+    }
   }
 
   return (

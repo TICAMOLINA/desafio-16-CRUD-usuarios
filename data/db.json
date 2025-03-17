@@ -1,7 +1,7 @@
 {
   "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Maximiliano Luis",
       "apellido": "Príncipe",
       "edad": 40,
@@ -9,7 +9,7 @@
       "foto": "imgs/maxi.webp"
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "Mauricio",
       "apellido": "Molina",
       "edad": 35,
@@ -17,7 +17,7 @@
       "foto": "imgs/gemini.webp"
     },
     {
-      "id": 3,
+      "id": "3",
       "nombre": "Saul",
       "apellido": "Goodman",
       "edad": 48,
@@ -25,7 +25,7 @@
       "foto": "imgs/cygnus.webp"
     },
     {
-      "id": 4,
+      "id": "4",
       "nombre": "Walter",
       "apellido": "White",
       "edad": 50,
@@ -33,7 +33,7 @@
       "foto": "imgs/dragon.webp"
     },
     {
-      "id": 5,
+      "id": "5",
       "nombre": "Jesse",
       "apellido": "Pinkman",
       "edad": 25,
@@ -41,7 +41,7 @@
       "foto": "imgs/libra.webp"
     },
     {
-      "id": 6,
+      "id": "6",
       "nombre": "Eddard",
       "apellido": "Stark",
       "edad": 55,
