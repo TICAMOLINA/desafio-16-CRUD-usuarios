@@ -1,7 +1,6 @@
 import Formulario from "./components/Formulario"
 import UserList from "./components/UserList"
 import { useEffect, useState } from "react"
-import USUARIOS from "./constants/USUARIOS"
 
 const App = () => {
 
@@ -101,7 +100,7 @@ const App = () => {
 
   return (
     <>
-        <h1 className="text-4xl my-5">CRUD Usuarios</h1>
+        <h1 className="text-gray-300 text-4xl my-5">CRUD Usuarios</h1>
         <hr />
         <Formulario
           agregarUsuario={agregarUsuario}

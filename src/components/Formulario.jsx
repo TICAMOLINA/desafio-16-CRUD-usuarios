@@ -46,17 +46,17 @@ const Formulario = ({ agregarUsuario, usuarioAEditar, setUsuarioAEditar, editarU
 
     return (
         <>
-            <h2 className="text-2xl font-semibold my-4">
+            <h2 className="text-2xl text-gray-300 font-semibold my-4">
                 Formulario de {usuarioAEditar ? 'edición' : 'carga'} de usuarios
             </h2>
 
             <div className="max-w-lg mb-4">
                 <form
                     onSubmit={handleSubmit}
-                    className="bg-white border rounded-lg p-6">
+                    className="bg-[#6732A1]/40 border border-white/10 rounded-lg p-6">
 
                     {/* NOMBRE */}
-                    <label htmlFor="lbl-nombre" className="block mb-2 text-sm font-medium text-gray-700">
+                    <label htmlFor="lbl-nombre" className="block mb-2 text-sm font-medium text-gray-200">
                         Nombre
                     </label>
                     <input
@@ -69,7 +69,7 @@ const Formulario = ({ agregarUsuario, usuarioAEditar, setUsuarioAEditar, editarU
                         value={dataFormulario.nombre} />
 
                     {/* APELLIDO */}
-                    <label htmlFor="lbl-apellido" className="block mb-2 text-sm font-medium text-gray-700">
+                    <label htmlFor="lbl-apellido" className="block mb-2 text-sm font-medium text-gray-200">
                         Apellido
                     </label>
                     <input
@@ -82,7 +82,7 @@ const Formulario = ({ agregarUsuario, usuarioAEditar, setUsuarioAEditar, editarU
                         value={dataFormulario.apellido} />
 
                     {/* EDAD */}
-                    <label htmlFor="lbl-edad" className="block mb-2 text-sm font-medium text-gray-700">
+                    <label htmlFor="lbl-edad" className="block mb-2 text-sm font-medium text-gray-200">
                         Edad
                     </label>
                     <input
@@ -95,7 +95,7 @@ const Formulario = ({ agregarUsuario, usuarioAEditar, setUsuarioAEditar, editarU
                         value={dataFormulario.edad} />
 
                     {/* PUESTO */}
-                    <label htmlFor="lbl-puesto" className="block mb-2 text-sm font-medium text-gray-700">
+                    <label htmlFor="lbl-puesto" className="block mb-2 text-sm font-medium text-gray-200">
                         Puesto
                     </label>
                     <input
@@ -108,7 +108,7 @@ const Formulario = ({ agregarUsuario, usuarioAEditar, setUsuarioAEditar, editarU
                         value={dataFormulario.puesto} />
 
                     {/* FOTO */}
-                    <label htmlFor="lbl-foto" className="block mb-2 text-sm font-medium text-gray-700">
+                    <label htmlFor="lbl-foto" className="block mb-2 text-sm font-medium text-gray-200">
                         Foto
                     </label>
                     <input
@@ -123,7 +123,7 @@ const Formulario = ({ agregarUsuario, usuarioAEditar, setUsuarioAEditar, editarU
                     <div className="flex justify-between">
                         <button
                             type="submit"
-                            className={`px-4 py-2 ${usuarioAEditar ? 'bg-yellow-300' : 'bg-green-300'} bg-green-300 text-white rounded-lg ${usuarioAEditar ? 'hover:bg-yellow-700' : 'hover:bg-green-700'} cursor-pointer`}>
+                            className={`px-4 py-2 ${usuarioAEditar ? 'bg-yellow-300' : 'bg-green-400'} bg-green-400 text-white rounded-lg ${usuarioAEditar ? 'hover:bg-yellow-700' : 'hover:bg-green-700'} cursor-pointer`}>
                             {usuarioAEditar ? 'Editar' : 'Crear'}
                         </button>
                         <button
