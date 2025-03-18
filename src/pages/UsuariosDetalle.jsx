@@ -37,7 +37,7 @@ const UsuariosDetalle = () => {
                 usuarioDetalle ?
                     (
                         <>
-                            <h2 className="text-xl">Nombre y apellido: {usuarioDetalle.nombre}.</h2>
+                            <h2 className="text-xl">Nombre y apellido: {usuarioDetalle.nombre} {usuarioDetalle.apellido}.</h2>
                             <p className="mt-3">Edad: {usuarioDetalle.edad} años.</p>
                             <p className="mt-3">El mismo se desempeña como {usuarioDetalle.puesto}.</p>
                             <img className="mt-5"
