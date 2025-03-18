@@ -6,7 +6,7 @@
       "apellido": "Príncipe",
       "edad": 40,
       "puesto": "Desarrollador Full Stack",
-      "foto": "imgs/foto-perfil-maxi.webp"
+      "foto": "/imgs/foto-perfil-maxi.webp"
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "apellido": "Molina",
       "edad": 35,
       "puesto": "Desarrollador Full Stack",
-      "foto": "imgs/gemini.webp"
+      "foto": "/imgs/gemini.webp"
     },
     {
       "id": "3",
@@ -22,7 +22,7 @@
       "apellido": "Goodman",
       "edad": 48,
       "puesto": "Abogado",
-      "foto": "imgs/foto-perfil-saul.webp"
+      "foto": "/imgs/foto-perfil-saul.webp"
     },
     {
       "id": "4",
@@ -30,7 +30,7 @@
       "apellido": "White",
       "edad": 50,
       "puesto": "Desarrollador Full Stack",
-      "foto": "imgs/foto-perfil-walter.webp"
+      "foto": "/imgs/foto-perfil-walter.webp"
     },
     {
       "id": "5",
@@ -38,7 +38,7 @@
       "apellido": "Pinkman",
       "edad": 25,
       "puesto": "Cadete",
-      "foto": "imgs/foto-perfil-jesse.webp"
+      "foto": "/imgs/foto-perfil-jesse.webp"
     },
     {
       "id": "6",
@@ -46,7 +46,7 @@
       "apellido": "Stark",
       "edad": 55,
       "puesto": "Desarrollador Full Stack",
-      "foto": "imgs/foto-perfil-eddard.webp"
+      "foto": "/imgs/foto-perfil-eddard.webp"
     }
   ]
 }

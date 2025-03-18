@@ -4,6 +4,7 @@ import Contacto from "../pages/Contacto"
 import Nosotros from "../pages/Nosotros"
 import CrudUsuarios from "../pages/CrudUsuarios"
 import NoEncontrado from "../pages/NoEncontrado"
+import UsuariosDetalle from "../pages/UsuariosDetalle"
 
 const Rutas = () => {
  
@@ -24,6 +25,10 @@ const Rutas = () => {
             {
                 path: '/crudusuarios',
                 element: <CrudUsuarios />
+            },
+            {
+                path: '/crudusuarios/detalle/:id',
+                element: <UsuariosDetalle />
             },
             {
                 path: '*',
